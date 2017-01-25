@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {{> head }}
+    </head>
+    <body>
+        <main>
+            {{#if data}}
+                <h1 class="margin-b">{{data.result_count}} {{labels.resultsFound}}</h1>
+                <div>
+                    {{#each data.listing}}
+                        <a href="#" class="property-container margin-double-b" aria-label="{{num_bedrooms}} {{../labels.bedroom}} {{property_type}} {{../labels.forSalePrice}}: {{formatCurrency price}}. {{description}}">
+                            <img class="property-image" src="{{image_url}}" alt="{{num_bedrooms}} bedroom {{property_type}} for sale"/>
+                            <div class="property-details">
+                                <h2>{{num_bedrooms}} {{../labels.bedroom}} {{property_type}} {{../labels.forSale}}</h2>
+                                <div class="property-price medium">{{formatCurrency price}}</div>
+                                <p class="small">{{description}}</p>
+                            </div>
+                            <div class="property-agent">
+                                <div class="col col-f-12-of-12 col-m-f-1-of-6 col-l-f-3-of-3">
+                                    <img class="property-agent-logo" src="{{agent_logo}}" alt="{{agent_name}}" />
+                                </div>
+                                <div class="col col-f-12-of-12 col-m-2-of-6 col-l-f-3-of-3">{{agent_name}}</div>
+                                <div class="col col-f-12-of-12 col-m-2-of-6 col-l-f-3-of-3">{{agent_address}}, {{agent_postcode}}</div>
+                                <div class="col col-f-12-of-12 col-m-1-of-6 col-l-f-3-of-3">T: {{agent_phone}}</div>
+                            </div>
+                        </a>
+                    {{/each}}
+                </div>
+            {{/if}}
+        </main>
+    </body>
+</html>

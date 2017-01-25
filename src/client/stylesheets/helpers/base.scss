@@ -1,0 +1,63 @@
+@import 'mixins';
+@import 'variables';
+
+/**
+ * A very simple reset
+ */
+html, body, div, h1, h2, p, a, img, button, input { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/**
+ * Some base styling
+ */
+
+body {
+    @include font-smoothing();
+    font-family: $fontFamily;
+    background-color: $lightBlue;
+    color: $darkPurple;
+    font-size: $fontSizeMain;
+    line-height: $lineHeightMain;
+    padding: 1rem;
+
+    button,
+    input {
+        height: 45px;
+        border-radius: 0;
+        padding: 0 1rem;
+        appearance: none;
+    }
+
+    button {
+        background-color: $darkPurple;
+        color: $white;
+    }
+
+    input {
+        border: 1px solid $darkPurple;
+        color: $darkPurple;
+    }
+
+    a {
+        color: $darkPurple;
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: $fontSizeLarge;
+    }
+
+    h2 {
+        font-size: $fontSizeMedium;
+    }
+
+    ::-webkit-input-placeholder,
+    :-ms-input-placeholder {
+        color: rgba(67, 28, 93, 0.75);
+    }
+
+    :-moz-placeholder,
+    ::-moz-placeholder {
+        color: rgba(67, 28, 93, 0.75);
+        opacity: 1;
+    }
+}

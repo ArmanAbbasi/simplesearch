@@ -1,0 +1,154 @@
+@import 'helpers/base';
+
+.property-container {
+    background-color: #FFF;
+    box-shadow: 0 0 10px rgba(67,28,93,0.5);
+    display: block;
+
+    .property-price {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: $red;
+        font-weight: bold;
+    }
+    .property-image {
+        width: 100%;
+        min-height: 200px;
+        vertical-align: top;
+    }
+    .property-details {
+        width: calc(100% - 2rem);
+        padding: 1rem 1rem 0 1rem;
+        vertical-align: top;
+    }
+    .property-agent {
+        background-color: $darkPurple;
+        color: $white;
+        width: calc(100% - 2rem);
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+.margin-b {
+    margin-bottom: 1rem;
+}
+.margin-double-b {
+    margin-bottom: 2rem;
+}
+.medium {
+    font-size: $fontSizeMain;
+}
+.small {
+    font-size: $fontSizeSmall;
+}
+
+.col {
+    display: inline-block;
+    vertical-align: top;
+}
+/* Small */
+$max-cols: 12;
+@for $sum from 1 through $max-cols {
+    .col-#{$sum}-of-#{$max-cols} {
+        @include col(1, $sum, $max-cols);
+    }
+    .col-f-#{$sum}-of-#{$max-cols} {
+        @include col(0, $sum, $max-cols);
+    }
+}
+
+/* Medium */
+$max-cols: 6;
+@media screen and (min-width: 600px) {
+    @for $sum from 1 through $max-cols {
+        .col-m-#{$sum}-of-#{$max-cols} {
+            @include col(0.75, $sum, $max-cols);
+        }
+        .col-m-f-#{$sum}-of-#{$max-cols} {
+            @include col(0, $sum, $max-cols);
+        }
+    }
+
+    .property-container {
+        .property-image {
+            width: calc(50% - 0.75rem);
+            margin-right: 0.75rem;
+        }
+        .property-details {
+            width: calc(50% - 1.5rem);
+            padding: 0.75rem 0.75rem 0 0.75rem;
+            display: inline-block;
+        }
+        .property-agent {
+            width: calc(100% - 2rem);
+            margin-top: 1.5rem;
+        }
+        .property-agent-logo {
+            width: 100%;
+        }
+    }
+
+    body {
+        padding: 1.5rem;
+
+        .margin-b {
+            margin-bottom: 1.5rem;
+        }
+        .margin-double-b {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+/* Large */
+$max-cols: 3;
+@media screen and (min-width: 1024px) {
+    @for $sum from 1 through $max-cols {
+        .col-l-#{$sum}-of-#{$max-cols} {
+            @include col(1, $sum, $max-cols);
+        }
+        .col-l-f-#{$sum}-of-#{$max-cols} {
+            @include col(0, $sum, $max-cols);
+        }
+    }
+
+    .property-container {
+        position: relative;
+
+        .property-image {
+            width: calc(33.33% - 1rem);
+            margin-right: 1rem;
+        }
+        .property-details {
+            width: calc(33.33% - 2rem);
+            padding: 1rem;
+        }
+        .property-agent {
+            width: calc(33.33% - 2rem);
+            background-color: $darkPurple;
+            color: $white;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin-top: 0;
+        }
+        .property-agent-logo {
+            width: auto;
+        }
+    }
+
+    body {
+        padding: 2rem;
+
+        .margin-b {
+            margin-bottom: 2rem;
+        }
+        .margin-double-b {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
+
