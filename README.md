@@ -1,5 +1,5 @@
 ## Introduction
-This project is made with NodeJS, Express, Handlebars, SASS/SCSS, Jasmine, Babel, Gulp
+This project is made with NodeJS, Express, Handlebars, SASS/SCSS, Jasmine, Babel, Gulp. The search is created with a stubbed data and a fake API call.
 
 ### Demo
 ![Mobile demo](demo/demo_mobile.gif)
@@ -19,3 +19,7 @@ This project is made with NodeJS, Express, Handlebars, SASS/SCSS, Jasmine, Babel
 - npm run test # Runs the tests
 - npm run watch # Real time running of all tasks while you code (linting, sass/scss, es6/babel, images, test/tdd)
 ```
+
+## How it works
+- Navigate to http://localhost:3000/search, to see the search page. Navigating to any other paths, will result in a 'page not found'. See the routes.
+- The search is created with a stubbed data and a fake API call. If you search for "N11", it will find results. Any other postcode will show the, 'No results found' page.
