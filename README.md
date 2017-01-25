@@ -2,8 +2,8 @@
 This project is made with NodeJS, Express, Handlebars, SASS/SCSS, Jasmine, Babel, Gulp
 
 ### Demo
-![Mobile demo](https://github.com/ArmanAbbasi/VueJsStarterKit/blob/master/demo/demo_mobile.gif)
-- For a tablet and desktop demo, see: ![demo folder](https://github.com/ArmanAbbasi/VueJsStarterKit/blob/master/demo/).
+![Mobile demo](demo/demo_mobile.gif)
+- For a tablet and desktop demo, see: [demo folder](demo/).
 
 ## System requirements
 - NodeJS installed (tested on v6.9.4)
