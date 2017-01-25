@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const expHbs = require('express-handlebars');
-const favicon = require('serve-favicon');
 const compression = require('compression');
 const staticAsset = require('static-asset');
 const zLib = require('zlib');
