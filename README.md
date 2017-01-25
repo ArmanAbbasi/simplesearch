@@ -1,7 +1,7 @@
 ## Introduction
 This project is made with NodeJS, Express, Handlebars, SASS/SCSS, Jasmine, Babel, Gulp, Server side rendered (SSR), Gzip compression, Image compression, and JS/HTML/CSS minification. The search is created with a stubbed data and a fake API call. 
 
-### Demo
+### Demo (Mobile view: iPhone 5)
 ![Mobile demo](demo/demo_mobile.gif)
 - For a tablet and desktop demo, see: [demo folder](demo/).
 
