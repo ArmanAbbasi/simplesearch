@@ -1,11 +1,20 @@
 /**
  * Used to create grid columns
  */
-@mixin col($gutter, $col, $max-cols: 12) {
+@mixin col($gutter, $col, $max-cols, $topAlign: false) {
     $val: ((100% / $max-cols) * $col);
-    width: if($gutter, calc(#{$val} - #{$gutter * 2}rem), #{$val});
-    margin-left: #{$gutter}rem;
-    margin-right: #{$gutter}rem;
+
+    width: if($gutter > 0, calc(#{$val} - #{$gutter * 2}rem), #{$val});
+
+    @if $gutter > 0 {
+        margin-left: #{$gutter}rem;
+        margin-right: #{$gutter}rem;
+    }
+
+    @if $topAlign {
+        display: inline-block;
+        vertical-align: top;
+    }
 }
 
 /**

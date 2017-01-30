@@ -1,10 +1,10 @@
 @import 'helpers/base';
 
 .property {
-    background-color: #FFF;
-    box-shadow: 0 0 10px rgba(67,28,93,0.5);
-    display: block;
+    background-color: $white;
+    box-shadow: 0 0 10px rgba(67, 28, 93, .5);
     margin-bottom: 2rem;
+    display: block;
 
     .property__price {
         margin-top: 1rem;
@@ -26,21 +26,29 @@
     .property__description {
         font-size: $fontSizeSmall;
     }
+
     .property__agent {
+        width: calc(100% - 2rem);
         background-color: $darkPurple;
         color: $white;
-        width: calc(100% - 2rem);
         padding: 1rem;
         margin-top: 1rem;
+
+        .property__agent-image,
+        .property__agent-name,
+        .property__agent-address,
+        .property__agent-phone {
+            @include col(0, 12, 12, true);
+        }
     }
 }
 
 .search {
     .search__input {
-        @include col(0, 8, 12);
+        @include col(0, 8, 12, true);
     }
     .search__button {
-        @include col(0, 4, 12);
+        @include col(0, 4, 12, true);
     }
 }
 
@@ -53,33 +61,7 @@ body {
     }
 }
 
-.col {
-    display: inline-block;
-    vertical-align: top;
-}
-/* Small */
-$max-cols: 12;
-@for $sum from 1 through $max-cols {
-    .col-#{$sum}-of-#{$max-cols} {
-        @include col(1, $sum, $max-cols);
-    }
-    .col-f-#{$sum}-of-#{$max-cols} {
-        @include col(0, $sum, $max-cols);
-    }
-}
-
-/* Medium */
-$max-cols: 6;
 @media screen and (min-width: 600px) {
-    @for $sum from 1 through $max-cols {
-        .col-m-#{$sum}-of-#{$max-cols} {
-            @include col(0.75, $sum, $max-cols);
-        }
-        .col-m-f-#{$sum}-of-#{$max-cols} {
-            @include col(0, $sum, $max-cols);
-        }
-    }
-
     .property {
         margin-bottom: 3rem;
 
@@ -95,9 +77,20 @@ $max-cols: 6;
         .property__agent {
             width: calc(100% - 2rem);
             margin-top: 1.5rem;
-        }
-        .property__agent-logo {
-            width: 100%;
+
+            .property__agent-logo {
+                width: 100%;
+            }
+            .property__agent-image {
+                @include col(0, 2, 12);
+            }
+            .property__agent-name,
+            .property__agent-address {
+                @include col(0.75, 4, 12);
+            }
+            .property__agent-phone {
+                @include col(0.75, 2, 12);
+            }
         }
     }
 
@@ -111,18 +104,7 @@ $max-cols: 6;
     }
 }
 
-/* Large */
-$max-cols: 3;
 @media screen and (min-width: 1024px) {
-    @for $sum from 1 through $max-cols {
-        .col-l-#{$sum}-of-#{$max-cols} {
-            @include col(1, $sum, $max-cols);
-        }
-        .col-l-f-#{$sum}-of-#{$max-cols} {
-            @include col(0, $sum, $max-cols);
-        }
-    }
-
     .property {
         position: relative;
         margin-bottom: 4rem;
@@ -144,9 +126,17 @@ $max-cols: 3;
             top: 0;
             bottom: 0;
             margin-top: 0;
-        }
-        .property__agent-logo {
-            width: auto;
+
+            .property__agent-logo {
+                width: auto;
+            }
+
+            .property__agent-image,
+            .property__agent-name,
+            .property__agent-address,
+            .property__agent-phone {
+                @include col(0, 12, 12);
+            }
         }
     }
 
