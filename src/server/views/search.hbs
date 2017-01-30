@@ -8,9 +8,9 @@
         {{#if resultsSubTitle}}
             <p class="introduction">{{resultsSubTitle}}</p>
         {{/if}}
-        <form action="results">
-            <input class="col-f-8-of-12" type="search" name="p" placeholder="{{labels.postCode}}" aria-label="{{labels.searchByPostCode}}"/>
-            <button class="col-f-4-of-12" type="submit">{{labels.search}}</button>
+        <form class="search" action="results">
+            <input class="search__input" type="search" name="p" placeholder="{{labels.postCode}}" aria-label="{{labels.searchByPostCode}}"/>
+            <button class="search__button" type="submit">{{labels.search}}</button>
         </form>
     </body>
 </html>

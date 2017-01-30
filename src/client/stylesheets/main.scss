@@ -35,6 +35,15 @@
     }
 }
 
+.search {
+    .search__input {
+        @include col(0, 8, 12);
+    }
+    .search__button {
+        @include col(0, 4, 12);
+    }
+}
+
 body {
     padding: 1rem;
 
