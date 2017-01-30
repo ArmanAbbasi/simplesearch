@@ -1,11 +1,10 @@
 {
   "name": "simplesearch",
-  "version": "1.0.0",
   "description": "A simple search page",
   "author": "Arman Abbasi",
   "license": "GPL-3.0",
   "scripts": {
-    "dev": "node src/server && gulp",
+    "dev": "node src/server",
     "test": "gulp test",
     "lint": "gulp lint",
     "watch": "gulp",
@@ -13,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "something"
+    "url": "git@github.com:ArmanAbbasi/simplesearch.git"
   },
   "dependencies": {
     "compression": "^1.6.2",
