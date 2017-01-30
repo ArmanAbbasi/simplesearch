@@ -3,7 +3,6 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoPref = require('gulp-autoprefixer');
 const clip = require('gulp-clip-empty-files');
-const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const esLint = require('gulp-eslint');
 const browserIfy = require('browserify');
@@ -24,7 +23,7 @@ const ES6_ENTRY_FILE = 'src/client/main.js';
 const ES6_WATCH_PATH = 'src/client/**/*.js';
 const ES6_TASK_NAME = 'babel';
 
-const LINT_WATCH_PATH = 'src/**/*.js';
+const LINT_WATCH_PATH = ['src/**/*.js', 'test/**/*.js'];
 const LINT_TASK_NAME = 'lint';
 
 const IMAGES_WATCH_PATH = 'src/client/images/**/*.{png,ico}';
@@ -78,27 +77,8 @@ gulp.task(ES6_TASK_NAME, () => {
  * Linting of the JS code
  * */
 gulp.task(LINT_TASK_NAME, () =>
-    gulp.src([LINT_WATCH_PATH])
-        .pipe(esLint({
-            parserOptions: {
-                sourceType: 'module'
-            },
-            rules: {
-                'indent': ['error', 4],
-                'comma-dangle': ['error', 'never'],
-                'quotes': ['error', 'single'],
-                'semi': ['error', 'always']
-            },
-            globals: [
-            ],
-            envs: [
-                'browser',
-                'node',
-                'amd',
-                'es6',
-                'jasmine'
-            ]
-        }))
+    gulp.src(LINT_WATCH_PATH)
+        .pipe(esLint())
         .pipe(esLint.format())
         .pipe(esLint.failAfterError())
 );

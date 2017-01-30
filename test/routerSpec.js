@@ -2,8 +2,9 @@ const express = require('express');
 const path = require('path');
 const request = require('supertest');
 const app = express();
-const router = require(path.resolve('.') + '/src/server/router')(app);
 const expHbs = require('express-handlebars');
+
+require(path.resolve('.') + '/src/server/router')(app);
 
 app.set('views', path.resolve('.') + '/src/server/views');
 app.engine('hbs', expHbs({
