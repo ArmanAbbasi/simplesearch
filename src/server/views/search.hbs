@@ -4,15 +4,13 @@
         {{> head }}
     </head>
     <body>
-        <main>
-            <h1 class="margin-b">{{resultsTitle}}</h1>
-            {{#if resultsSubTitle}}
-                <p class="margin-b">{{resultsSubTitle}}</p>
-            {{/if}}
-            <form class="search-container" action="results">
-                <input class="search-input col-f-8-of-12" type="search" name="p" placeholder="{{labels.postCode}}" aria-label="{{labels.searchByPostCode}}"/>
-                <button class="search-submit col-f-4-of-12" type="submit">{{labels.search}}</button>
-            </form>
-        </main>
+        <h1 class="header">{{resultsTitle}}</h1>
+        {{#if resultsSubTitle}}
+            <p class="introduction">{{resultsSubTitle}}</p>
+        {{/if}}
+        <form action="results">
+            <input class="col-f-8-of-12" type="search" name="p" placeholder="{{labels.postCode}}" aria-label="{{labels.searchByPostCode}}"/>
+            <button class="col-f-4-of-12" type="submit">{{labels.search}}</button>
+        </form>
     </body>
 </html>

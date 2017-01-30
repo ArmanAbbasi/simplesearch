@@ -1,27 +1,32 @@
 @import 'helpers/base';
 
-.property-container {
+.property {
     background-color: #FFF;
     box-shadow: 0 0 10px rgba(67,28,93,0.5);
     display: block;
+    margin-bottom: 2rem;
 
-    .property-price {
+    .property__price {
         margin-top: 1rem;
         margin-bottom: 1rem;
         color: $red;
         font-weight: bold;
+        font-size: $fontSizeMain;
     }
-    .property-image {
+    .property__image {
         width: 100%;
         min-height: 200px;
         vertical-align: top;
     }
-    .property-details {
+    .property__details {
         width: calc(100% - 2rem);
         padding: 1rem 1rem 0 1rem;
         vertical-align: top;
     }
-    .property-agent {
+    .property__description {
+        font-size: $fontSizeSmall;
+    }
+    .property__agent {
         background-color: $darkPurple;
         color: $white;
         width: calc(100% - 2rem);
@@ -30,17 +35,13 @@
     }
 }
 
-.margin-b {
-    margin-bottom: 1rem;
-}
-.margin-double-b {
-    margin-bottom: 2rem;
-}
-.medium {
-    font-size: $fontSizeMain;
-}
-.small {
-    font-size: $fontSizeSmall;
+body {
+    padding: 1rem;
+
+    .header,
+    .introduction {
+        margin-bottom: 1rem;
+    }
 }
 
 .col {
@@ -70,21 +71,23 @@ $max-cols: 6;
         }
     }
 
-    .property-container {
-        .property-image {
+    .property {
+        margin-bottom: 3rem;
+
+        .property__image {
             width: calc(50% - 0.75rem);
             margin-right: 0.75rem;
         }
-        .property-details {
+        .property__details {
             width: calc(50% - 1.5rem);
             padding: 0.75rem 0.75rem 0 0.75rem;
             display: inline-block;
         }
-        .property-agent {
+        .property__agent {
             width: calc(100% - 2rem);
             margin-top: 1.5rem;
         }
-        .property-agent-logo {
+        .property__agent-logo {
             width: 100%;
         }
     }
@@ -92,11 +95,9 @@ $max-cols: 6;
     body {
         padding: 1.5rem;
 
-        .margin-b {
+        .header,
+        .introduction {
             margin-bottom: 1.5rem;
-        }
-        .margin-double-b {
-            margin-bottom: 3rem;
         }
     }
 }
@@ -113,18 +114,19 @@ $max-cols: 3;
         }
     }
 
-    .property-container {
+    .property {
         position: relative;
+        margin-bottom: 4rem;
 
-        .property-image {
+        .property__image {
             width: calc(33.33% - 1rem);
             margin-right: 1rem;
         }
-        .property-details {
+        .property__details {
             width: calc(33.33% - 2rem);
             padding: 1rem;
         }
-        .property-agent {
+        .property__agent {
             width: calc(33.33% - 2rem);
             background-color: $darkPurple;
             color: $white;
@@ -134,7 +136,7 @@ $max-cols: 3;
             bottom: 0;
             margin-top: 0;
         }
-        .property-agent-logo {
+        .property__agent-logo {
             width: auto;
         }
     }
@@ -142,13 +144,9 @@ $max-cols: 3;
     body {
         padding: 2rem;
 
-        .margin-b {
+        .header,
+        .introduction {
             margin-bottom: 2rem;
-        }
-        .margin-double-b {
-            margin-bottom: 4rem;
         }
     }
 }
-
-
