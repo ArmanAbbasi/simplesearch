@@ -44,6 +44,7 @@ describe('Router', () => {
                 .get('/')
                 .end((request, response) => {
                     expect(response.res.statusCode).toEqual(404);
+                    done();
                 });
         });
     });
