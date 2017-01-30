@@ -51,13 +51,9 @@ body {
     }
 
     ::-webkit-input-placeholder,
-    :-ms-input-placeholder {
-        color: rgba(67, 28, 93, 0.75);
-    }
-
+    :-ms-input-placeholder,
     :-moz-placeholder,
     ::-moz-placeholder {
-        color: rgba(67, 28, 93, 0.75);
-        opacity: 1;
+        color: rgba(67, 28, 93, .75);
     }
 }
