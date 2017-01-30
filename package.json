@@ -1,6 +1,6 @@
 {
   "name": "simplesearch",
-  "description": "A simple search page",
+  "description": "A simple search page, made with NodeJS, Express, Handlebars, SASS/SCSS, Jasmine, Babel, Gulp, Server side rendered (SSR), Gzip compression, Image compression, and JS/HTML/CSS minification",
   "author": "Arman Abbasi",
   "license": "GPL-3.0",
   "scripts": {
