@@ -74,7 +74,7 @@ app.use((req, res) => {
 });
 
 /**
- * Page not found? :)
+ * Start app at port
  * */
 app.listen(APP_PORT_NUM, () => {
     console.log('Server running at: http://localhost:3000/');
