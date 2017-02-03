@@ -15,7 +15,7 @@ const PAGE_NOT_FOUND_MSG = 'Requested page not found';
  * Indicating our static folder and setting caching duration
  * */
 app.use(staticAsset(path.resolve('.') + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
-app.use(express.static(path.resolve('.') + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }) );
+app.use(express.static(path.resolve('.') + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
 
 /**
  * Compression of HTML
