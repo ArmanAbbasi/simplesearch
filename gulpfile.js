@@ -16,7 +16,8 @@ const deDupe = require('gulp-dedupe');
 const jasmine = require('gulp-jasmine');
 const util = require('gulp-util');
 
-const SASS_WATCH_PATH = 'src/client/stylesheets/main.scss';
+const SASS_WATCH_PATH = 'src/client/stylesheets/**/*.scss';
+const SASS_ENTRY_PATH = 'src/client/stylesheets/main.scss';
 const SASS_TASK_NAME = 'sass';
 
 const ES6_ENTRY_FILE = 'src/client/main.js';
@@ -40,7 +41,7 @@ const TEST_TASK_NAME = 'test';
  * SASS compiling and compression to dist folder
  * */
 gulp.task(SASS_TASK_NAME, () =>
-    gulp.src(SASS_WATCH_PATH)
+    gulp.src(SASS_ENTRY_PATH)
         .pipe(deDupe())
         .pipe(concat('main.css'))
         .pipe(sass({

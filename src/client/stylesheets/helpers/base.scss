@@ -14,7 +14,7 @@ body {
     @include font-smoothing();
     font-family: $fontFamily;
     background-color: $lightBlue;
-    color: $darkPurple;
+    color: $fontColorMain;
     font-size: $fontSizeMain;
     line-height: $lineHeightMain;
     padding: 1rem;
@@ -38,7 +38,7 @@ body {
     }
 
     a {
-        color: $darkPurple;
+        color: $fontColorMain;
         text-decoration: none;
     }
 
